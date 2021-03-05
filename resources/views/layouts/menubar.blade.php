@@ -39,7 +39,36 @@
                     <div class="text-center d-inline-block">
                         <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                     </div>
-                    <div class="clearfix"></div>
+
+                <!-- Authentication Links -->
+                @guest
+                    @if (Route::has('login') || Route::has('register'))
+                    @endif
+                @else
+                    <div class="text-center d-inline-block">
+                        <a href="#" target="_blank" class="fh5co_display_table"
+                           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <div class="fh5co_verticle_middle">
+                                <img class="rounded-circle" src="/storage/{{Auth::user()->foto}}"
+                                style="width: 30px"></img>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/journal/home">Home</a>
+                            <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">Profilo</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                @endguest
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
         </div>
