@@ -21,4 +21,8 @@ class News extends Model
     public function findAll() {
         return News::all();
     }
+
+    public function firstFiveNews() {
+        return News::all()->take(5);
+    }
 }
