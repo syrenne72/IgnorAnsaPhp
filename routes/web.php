@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('journal.home');
 
 Auth::routes();
 
-Route::get('/journal/home', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/journal/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('journal.home');
 Route::get('/journal/{news}', [\App\Http\Controllers\HomeController::class, 'show']);
 
 /**
@@ -28,8 +26,15 @@ Route::get('/journal/{news}', [\App\Http\Controllers\HomeController::class, 'sho
  */
 Route::get('/n/create', [App\Http\Controllers\NewsController::class, 'create']);
 Route::post('/n', [App\Http\Controllers\NewsController::class, 'store']);
+Route::get('/n/{news}/edit', [App\Http\Controllers\NewsController::class, 'edit'])->name('news.edit');
+Route::patch('/n/{news}', [App\Http\Controllers\NewsController::class, 'update'])->name('news.update');
 Route::get('/n/{news}', [App\Http\Controllers\NewsController::class, 'show']);
+Route::delete('/n/{news}', [App\Http\Controllers\NewsController::class, 'destroy'])->name('news.destroy');
 
+/**
+ * Controller per i profili amministratore
+ * Posizionare prima i nomi e poi le uri con le {variabili}
+ */
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 Route::get('/profile/{user}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');
 Route::patch('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'update'])->name('profile.update');
