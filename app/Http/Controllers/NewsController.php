@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -17,14 +18,25 @@ class NewsController extends Controller
         $this->middleware('auth');
     }
 
+    public function show(\App\Models\News $news) {
+        return view('news.show', compact('news'));
+    }
+
     public function create() {
         return view('news.create');
+    }
+
+    public function edit(News $news) {
+        $this->authorize('update', $news);
+
+        return view('news.edit', compact('news'));
     }
 
     public function store() {
         $data = request()->validate([
             'titolo' => 'required',
             'descrizione' => '',
+            'categoria' => '',
             'articolo' => '',
             'foto' => 'image',
         ]);
@@ -41,20 +53,13 @@ class NewsController extends Controller
         auth()->user()->news()->create(array_merge([
             'titolo' => $data['titolo'],
             'descrizione' => $data['descrizione'],
-            'articolo' => $data['articolo']],
+            'categoria' => $data['categoria'],
+            'articolo' => $data['articolo'],
+            'visualizzazioni' => 0,
+            'data' => Carbon::now()->toDateTimeString()],
             $imageArray ?? []));
 
         return redirect('/profile/' . auth()->user()->id);
-    }
-
-    public function show(\App\Models\News $news) {
-        return view('news.show', compact('news'));
-    }
-
-    public function edit(News $news) {
-        $this->authorize('update', $news);
-
-        return view('news.edit', compact('news'));
     }
 
     public function update(\App\Models\News $news) {
@@ -63,6 +68,7 @@ class NewsController extends Controller
         $data = request()->validate([
             'titolo' => 'required',
             'descrizione' => '',
+            'categoria' => '',
             'articolo' => '',
             'foto' => '',
         ]);
@@ -75,8 +81,13 @@ class NewsController extends Controller
             $imageArray = ['foto' => $imagePath];
         }
 
-        $news->update(array_merge(
-            $data,
+        $news->update(array_merge([
+                'titolo' => $data['titolo'],
+                'descrizione' => $data['descrizione'],
+                'categoria' => $data['categoria'],
+                'articolo' => $data['articolo'],
+                'visualizzazioni' => 0,
+                'data' => Carbon::now()->toDateTimeString()],
             $imageArray ?? []
         ));
 

@@ -18,8 +18,11 @@ class CreateNewsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('titolo');
             $table->text('descrizione')->nullable();
+            $table->string('categoria');
             $table->text('articolo')->nullable();
             $table->text('foto')->nullable();
+            $table->unsignedBigInteger('visualizzazioni');
+            $table->string('data');
             $table->timestamps();
 
             $table->index('user_id');

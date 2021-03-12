@@ -43,6 +43,23 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="categoria" class="col-md-4 col-form-label">Categoria</label>
+
+                    <select id="categoria" name="categoria">
+                        <option value="attualita">Attualita</option>
+                        <option value="flash">Flash News</option>
+                        <option value="medicina">Medicina</option>
+                        <option value="sport">Sport</option>
+                        <option value="mondo_animale">Mondo animale</option>
+                        <option value="spettacolo">Spettacolo</option>
+                        <option value="arte">Arte</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="educazione">Educazione</option>
+                        <option value="social">Social</option>
+                    </select>
+                </div>
+
+                <div class="form-group row">
                     <label for="articolo" class="col-md-4 col-form-label">Articolo</label>
 
                     <textarea id="articolo" class="form-control ml-3"
