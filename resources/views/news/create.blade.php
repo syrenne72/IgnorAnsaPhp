@@ -56,6 +56,7 @@
                         <option value="lifestyle">Lifestyle</option>
                         <option value="educazione">Educazione</option>
                         <option value="social">Social</option>
+                        <option value="politica">Politica</option>
                     </select>
                 </div>
 

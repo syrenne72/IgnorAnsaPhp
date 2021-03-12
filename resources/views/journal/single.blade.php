@@ -2,6 +2,7 @@
 
 @section('content')
 
+@if(\App\Models\News::newView($news->id))@endif
 <div class="row pt-4 ml-5 mr-5 align-items-center" style="background-color: rgba(239,239,239,0.42)">
     <div class="col-2">
         <img class="rounded-circle" src="/storage/{{$news->foto}}" alt="image" style="width: 200px;">

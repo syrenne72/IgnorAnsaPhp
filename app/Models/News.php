@@ -25,10 +25,10 @@ class News extends Model {
         return $date->format('d/m/Y');
     }
 
-    public function newView(int $id) {
+    public static function newView(int $id) {
         DB::table('news')->where('id', $id)
             ->update(['visualizzazioni' => DB::raw('visualizzazioni + 1')]);
-        dd('ok');
+        return 1;
     }
 
     public function findAll() {

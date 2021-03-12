@@ -89,31 +89,22 @@
                             <a class="nav-link" href="/journal/home">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="blog.html">Blog <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="blog.html"> Salute <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="single.html">Single <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                <a class="dropdown-item" href="#">Action in</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                                <a class="dropdown-item" href="#">Action in</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            <a class="nav-link" href="single.html"> Attualità <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="Contact_us.html">Contact <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="single.html"> Sport <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="single.html"> Spettacolo <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="single.html"> Lifestyle <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="Contact_us.html"> Contattaci <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -158,27 +149,26 @@
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="footer_main_title py-3"> Categorie</div>
                     <ul class="footer_menu">
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Business</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Entertainment</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Environment</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Health</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Life style</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Politics</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Technology</a></li>
-                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; World</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Salute</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Spettacolo</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Sport</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Attualità</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Lifestyle</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Politica</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Arte</a></li>
+                        <li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Mondo animale</a></li>
                     </ul>
                 </div>
                 <!-- -->
 
                 <!-- Terza colonna foooter -->
+                @if($trending = $news->findMostPopular()->take(3)->all())@endif
                 <div class="col-12 col-md-5 col-lg-4 position_footer_relative">
                     <div class="footer_main_title py-3"> Post popolari</div>
-                    <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                    <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-                    <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                    <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
-                    <div class="footer_makes_sub_font"> Dec 31, 2016</div>
-                    <a href="#" class="footer_post pb-4"> Success is not a good teacher failure makes you humble </a>
+                    @foreach($trending as $tr)
+                    <div class="footer_makes_sub_font">{{$tr->data()}}</div>
+                    <a href="#" class="footer_post pb-4">{{$tr->titolo}}</a>
+                    @endforeach
                 </div>
                 <!-- -->
 
@@ -204,9 +194,8 @@
                 <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved.</div>
                 <div class="col-12 col-md-6 spdp_right py-4">
                     <a href="/journal/home" class="footer_last_part_menu">Home</a>
-                    <a href="Contact_us.html" class="footer_last_part_menu">About</a>
-                    <a href="Contact_us.html" class="footer_last_part_menu">Contact</a>
-                    <a href="blog.html" class="footer_last_part_menu">Latest News</a></div>
+                    <a href="Contact_us.html" class="footer_last_part_menu">Su di noi</a>
+                    <a href="Contact_us.html" class="footer_last_part_menu">Contattaci</a>
             </div>
         </div>
     </div>

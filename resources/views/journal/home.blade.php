@@ -175,6 +175,7 @@
                     <a href="#" class="fh5co_tagg">Lifestyle</a>
                     <a href="#" class="fh5co_tagg">Educazione</a>
                     <a href="#" class="fh5co_tagg">Social</a>
+                    <a href="#" class="fh5co_tagg">Politica</a>
                 </div>
 {{--                --}}
 
