@@ -28,6 +28,11 @@ class HomeController extends Controller
         return view('/journal/home', compact('news'));
     }
 
+    public function salute() {
+        $news = new News();
+        return view('/journal/salute', compact('news'));
+    }
+
     public function show(\App\Models\News $news) {
         return view('/journal/single', compact('news'));
     }

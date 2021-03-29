@@ -18,6 +18,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('j
 Auth::routes();
 
 Route::get('/journal/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('journal.home');
+Route::get('/journal/salute', ['uses' => '\App\Http\Controllers\HomeController@salute']);
 Route::get('/journal/{news}', [\App\Http\Controllers\HomeController::class, 'show']);
 
 /**

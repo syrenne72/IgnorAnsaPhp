@@ -89,7 +89,7 @@
                     <div class="fh5co_news_img"><img src="/storage/{{$at->foto}}" alt=""/></div>
                     <div>
                         <a href="/journal/{{$at->id}}" class="d-block fh5co_small_post_heading"><span class="">{{$at->titolo}}</span></a>
-{{--                        <div class="c_g"><i class="fa fa-clock-o"></i>{{$at->data()}}</div>--}}
+                        <div class="c_g"><i class="fa fa-clock-o"></i>{{$at->data()}}</div>
                     </div>
                 </div>
             </div>
@@ -117,6 +117,7 @@
                             <div class="fh5co_news_img"><img src="/storage/{{$at->foto}}" alt=""/></div>
                             <div>
                                 <a href="/journal/{{$at->id}}" class="d-block fh5co_small_post_heading"><span class="">{{$at->titolo}}</span></a>
+                                <div class="c_g"><i class="fa fa-clock-o"></i>{{$at->data()}}</div>
                             </div>
                         </div>
                     </div>
@@ -148,7 +149,9 @@
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a href="/journal/{{$flash[$i]->id}}" class="fh5co_magna py-2">{{$flash[$i]->titolo}}</a> <a href="single.html" class="fh5co_mini_time py-3"> {{$flash[$i]->descrizione}}</a>
+                            <a href="/journal/{{$flash[$i]->id}}" class="fh5co_magna py-2">{{$flash[$i]->titolo}}</a>
+                            <a href="/journal/{{$flash[$i]->id}}" class="fh5co_mini_time py-3"> {{$flash[$i]->descrizione}}</a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i>{{$flash[$i]->data()}}</div>
                             <div class="fh5co_consectetur overflow-hidden">
                                 {{$flash[$i]->articolo}}
                             </div>
@@ -199,16 +202,19 @@
                 @endforeach
             </div>
         </div>
-        <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">
-            <div class="col-12 text-center pb-4 pt-4">
-                <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
-                <a href="#" class="btn_pagging">1</a>
-                <a href="#" class="btn_pagging">2</a>
-                <a href="#" class="btn_pagging">3</a>
-                <a href="#" class="btn_pagging">...</a>
-                <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
-            </div>
-        </div>
+
+{{--        Bottoni --}}
+{{--        Non utilizzati --}}
+{{--        <div class="row mx-0 animate-box" data-animate-effect="fadeInUp">--}}
+{{--            <div class="col-12 text-center pb-4 pt-4">--}}
+{{--                <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Precedente</a>--}}
+{{--                <a href="#" class="btn_pagging">1</a>--}}
+{{--                <a href="#" class="btn_pagging">2</a>--}}
+{{--                <a href="#" class="btn_pagging">3</a>--}}
+{{--                <a href="#" class="btn_mange_pagging">Successivo <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
     </div>
 </div>
 

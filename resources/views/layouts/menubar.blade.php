@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
     <link href="/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS -->
     <link href="/css/style_1.css" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
@@ -82,28 +83,28 @@
                 <button class="navbar-toggler navbar-toggler-right mt-3" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
-                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="img" class="mobile_logo_width"/></a>
+                <a class="navbar-brand" href="#"><img src="/png/logo.jpg" alt="img" class="mobile_logo_width"/></a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item @if(str_contains(url()->current(), '/home')) active @endif">
                             <a class="nav-link" href="/journal/home">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="blog.html"> Salute <span class="sr-only">(current)</span></a>
+                        <li class="nav-item @if(str_contains(url()->current(), '/salute')) active @endif">
+                            <a class="nav-link" href="/journal/salute"> Salute <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item @if(str_contains(url()->current(), '/attualita')) active @endif">
                             <a class="nav-link" href="single.html"> Attualità <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item @if(str_contains(url()->current(), '/sport')) active @endif">
                             <a class="nav-link" href="single.html"> Sport <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item @if(str_contains(url()->current(), '/spettacolo')) active @endif">
                             <a class="nav-link" href="single.html"> Spettacolo <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item @if(str_contains(url()->current(), '/lifestyle')) active @endif">
                             <a class="nav-link" href="single.html"> Lifestyle <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item @if(str_contains(url()->current(), '/contattaci')) active @endif">
                             <a class="nav-link" href="Contact_us.html"> Contattaci <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>

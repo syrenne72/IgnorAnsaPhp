@@ -40,11 +40,16 @@ class News extends Model {
     }
 
     public function findByCategory(String $cat) {
-       $std = DB::table('news')->where('categoria', $cat)->orderBy('id', 'desc')->get()->all();
+       $std = News::query()->where('categoria', $cat)->orderBy('id', 'desc')->get()->all();
         return $std;
     }
 
     public function findMostPopular() {
         return News::all()->sortByDesc('visualizzazioni');
+    }
+
+    public function findByCategoryPopular(String $cat) {
+        $std = News::query()->where('categoria', $cat)->orderBy('visualizzazioni', 'desc')->get()->all();
+        return $std;
     }
 }
