@@ -33,6 +33,16 @@ class HomeController extends Controller
         return view('/journal/salute', compact('news'));
     }
 
+    public function contattaci() {
+        $news = new News();
+        return view('/journal/contattaci', compact('news'));
+    }
+
+    public function workInProgress() {
+        $news = new News();
+        return view('/journal/work_in_progress', compact('news'));
+    }
+
     public function show(\App\Models\News $news) {
         return view('/journal/single', compact('news'));
     }

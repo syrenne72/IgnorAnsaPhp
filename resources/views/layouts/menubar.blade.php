@@ -93,19 +93,19 @@
                             <a class="nav-link" href="/journal/salute"> Salute <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @if(str_contains(url()->current(), '/attualita')) active @endif">
-                            <a class="nav-link" href="single.html"> Attualità <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/journal/work_in_progress"> Attualità <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @if(str_contains(url()->current(), '/sport')) active @endif">
-                            <a class="nav-link" href="single.html"> Sport <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/journal/work_in_progress"> Sport <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @if(str_contains(url()->current(), '/spettacolo')) active @endif">
-                            <a class="nav-link" href="single.html"> Spettacolo <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/journal/work_in_progress"> Spettacolo <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @if(str_contains(url()->current(), '/lifestyle')) active @endif">
-                            <a class="nav-link" href="single.html"> Lifestyle <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/journal/work_in_progress"> Lifestyle <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @if(str_contains(url()->current(), '/contattaci')) active @endif">
-                            <a class="nav-link" href="Contact_us.html"> Contattaci <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/journal/contattaci"> Contattaci <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -195,8 +195,7 @@
                 <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved.</div>
                 <div class="col-12 col-md-6 spdp_right py-4">
                     <a href="/journal/home" class="footer_last_part_menu">Home</a>
-                    <a href="Contact_us.html" class="footer_last_part_menu">Su di noi</a>
-                    <a href="Contact_us.html" class="footer_last_part_menu">Contattaci</a>
+                    <a href="/journal/contattaci" class="footer_last_part_menu">Contattaci</a>
             </div>
         </div>
     </div>
